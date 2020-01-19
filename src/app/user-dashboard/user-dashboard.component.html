@@ -1,0 +1,59 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Welcome To Dashboard</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <h2>User List</h2>
+        </div>
+        <div class="col-md-6">
+            <form  class="example" [formGroup] ="searchForm" (submit)="search()"  >
+                <input type="number" id="search"  formControlName="searchValue"  (blur)="logValidationErrors()" placeholder="Search by userId" name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <span class="help-block" *ngIf="formErrors.searchValue">{{formErrors.email}}</span>
+            </form>
+        </div>
+    </div>
+     
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>UserId</th>
+          <th>Profile</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{user.id}}</td>
+          <td><img [src]="user.avatar" class="img-rounded" [alt]="user.avatar"></td>
+          <td>{{user.email}}</td>
+          <td>{{user.first_name}} {{user.last_name}}</td>
+          <td>
+              <span><i (click)="editDeatils(user.id)" class="glyphicon glyphicon-pencil"></i></span> &nbsp;&nbsp;&nbsp;
+              <span><i (click)="deleteUserDeatils(user.id)"  class="glyphicon glyphicon-trash"></i></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-md-12">
+        <ul class="pagination">
+            <li><a (click)="nextSetOfUserList(1)">1</a></li>
+            <li ><a (click)="nextSetOfUserList(2)">2</a></li>
+          </ul>
+    </div>
+  </div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner>

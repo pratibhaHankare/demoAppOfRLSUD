@@ -1,0 +1,49 @@
+
+* {
+    box-sizing: border-box;
+  }
+  .glyphicon-trash{
+    color:red !important;
+}
+
+  #search{
+    padding-top: 0.8% !important;
+    padding-bottom: 0.8%  !important;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    font-size: 14px;
+    border: 1px solid grey;
+    float: left;
+    width: 40%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 10%;
+    padding: 4px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .pagination{
+      float: right;
+  }
