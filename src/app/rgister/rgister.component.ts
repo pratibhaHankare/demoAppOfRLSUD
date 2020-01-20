@@ -62,6 +62,7 @@ onSubmit(){
     (respose:any)=>{
      this.SpinnerService.hide();  
      this.showSuccess('User is Registered Successfully.');
+     this.redirectToLoginPage();
     }
     ,
     (err:any)=>{

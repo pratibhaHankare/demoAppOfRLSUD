@@ -9,7 +9,7 @@
        <div class="login-form">
           <form [formGroup] ="registrationForm" (submit)="onSubmit()">
              <div class="form-group" [ngClass]="{'has-error':formErrors.email}">
-                <label>User Name</label>
+                <label>Email</label>
                 <input type="email" formControlName="email" class="form-control" placeholder="Enter Email" (blur)="logValidationErrors()">
                 <span class="help-block" *ngIf="formErrors.email">{{formErrors.email}}</span>
              </div>
